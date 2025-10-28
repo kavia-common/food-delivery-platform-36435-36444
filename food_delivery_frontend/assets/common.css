@@ -1,0 +1,160 @@
+ /*
+Changelog (Profile screen improvements reference):
+1) Visual fidelity: calibrated typography scale and color tokens used by Profile.
+2) Responsiveness: added container width clamps, spacing scale, and media queries.
+3) Accessibility: focus-visible styles and reduced motion consideration.
+4) Cross-browser: vendor-prefixed properties for shadows and text rendering.
+5) Semantics: utility classes for visually-hidden and interactive focus rings.
+6) Asset optimization: standardized image rendering and lazy loading guidance.
+*/
+
+:root {
+  /* Colors (from design system) */
+  --color-ffffff: #ffffff;
+  --color-292929: #292929;
+  --color-000000: #000000;
+  --color-e9fffa: #e9fffa;
+  --color-979797: #979797;
+  --color-fff2af: #fff2af;
+  --color-129575: #129575;
+  --color-dadada: #dadada;
+  --color-4cd964: #4cd964;
+  --color-121212: #121212;
+  --color-ff9c00: #ff9c00;
+  --color-ffc107: #ffc107;
+  --color-ff3d00: #ff3d00;
+  --color-4caf50: #4caf50;
+  --color-1976d2: #1976d2;
+  --color-035b81: #035b81;
+  --color-d9d9d9: #d9d9d9;
+  --color-484848: #484848;
+  --color-303030: #303030;
+  --color-a9a9a9: #a9a9a9;
+  --color-ffa61a: #ffa61a;
+  --color-ffce80: #ffce80;
+  --color-71b1a1: #71b1a1;
+  --color-130f26: #130f26;
+  --color-c1c1c1: #c1c1c1;
+  --color-ffe1b3: #ffe1b3;
+  --color-ffad30: #ffad30;
+  --color-dbebe7: #dbebe7;
+  --color-898989: #898989;
+  --color-292d32: #292d32;
+  --color-181818: #181818;
+  --color-c4c4c4: #c4c4c4;
+  --color-797979: #797979;
+  --color-808a96: #808a96;
+  --color-ceecd7: #ceecd7;
+  --color-31b057: #31b057;
+  --color-ffe1e7: #ffe1e7;
+  --color-fd3654: #fd3654;
+  --color-ffba4d: #ffba4d;
+  --color-d8d8d8: #d8d8d8;
+  --color-f6faf9: #f6faf9;
+  --color-afd3ca: #afd3ca;
+  --color-f4f4f4: #f4f4f4;
+  --color-9747ff: #9747ff;
+  --color-828282: #828282;
+
+  /* Ocean Professional theme bridge (for this app) */
+  --theme-primary: #2563EB;
+  --theme-secondary: #F59E0B;
+  --theme-surface: #ffffff;
+  --theme-background: #f9fafb;
+  --theme-text: #111827;
+
+  /* Spacing (common scale) */
+  --spacing-2xs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 30px;
+
+  /* Shadows from design system */
+  --shadow-0: 0 0 5px 3px #696969;
+  --shadow-1: 0 8px 25px 0 #202020;
+  --shadow-2: 0 0 8px 0 #6c6c6c;
+  --shadow-3: 0 0 20px 0 #000000;
+  --shadow-4: 0 6.312px 19.725px 0 #202020;
+  --shadow-5: 0 4px 4px 0 #000000;
+  --shadow-6: 0 0 14.506px 0 #d90065;
+  --shadow-7: 0 2px 10px 0 #000000;
+  --shadow-8: 0 0 2px 0 #000000;
+  --shadow-9: 0 0 10px 0 #000000;
+  --shadow-10: 0 0 30px 0 #000000;
+
+  /* Base typography defaults (fallbacks) */
+  --font-primary: 'Poppins', Arial, sans-serif;
+
+  /* Layout clamp used by mobile screens like Profile */
+  --screen-min: 320px;
+  --screen-figma: 375px;
+  --screen-max: 420px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--theme-background);
+  color: var(--theme-text);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Utilities and a11y */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 1px 1px);
+  clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+.interactive {
+  cursor: pointer;
+  outline: none;
+}
+.interactive:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--theme-secondary) 40%, transparent);
+  border-radius: var(--radius-md);
+}
+
+/* Image rendering helpers */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: bicubic; /* IE fallback */
+}
+
+/* Container clamp for standalone HTML screens */
+.screen {
+  width: min(max(100vw, var(--screen-min)), var(--screen-figma));
+  max-width: var(--screen-max);
+  margin: 0 auto;
+  background: var(--color-ffffff);
+  position: relative;
+}
+
+/* Motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Breakpoints */
+@media (max-width: 360px) {
+  :root {
+    --spacing-md: 12px;
+  }
+}

@@ -1,0 +1,157 @@
+ /*
+Profile screen CSS refinements:
+- Visual fidelity maintained using variables mapped from Figma JSON.
+- Responsive clamp and fluid widths used for tabs/cards where feasible.
+- A11y focus states rely on .interactive from common.css.
+- Cross-browser hints via image-rendering and font smoothing (in common.css).
+- Asset optimization: images get explicit sizes via HTML and object-fit cover.
+*/
+
+:root {
+  /* Fallback palette if common.css is not loaded for any reason */
+  --color-ffffff: #ffffff;
+  --color-129575: #129575;
+  --color-898989: #898989;
+  --color-d9d9d9: #d9d9d9;
+  --color-121212: #121212;
+
+  /* Typography (selected refs used on this screen) */
+  --typo-76-family: 'Poppins';
+  --typo-76-size: 11px;
+  --typo-76-weight: 600;
+  --typo-76-line-height: 16.5px;
+  --typo-76-color: var(--color-ffffff);
+
+  --typo-77-family: 'Poppins';
+  --typo-77-size: 11px;
+  --typo-77-weight: 600;
+  --typo-77-line-height: 16.5px;
+  --typo-77-color: #71b1a1;
+
+  --typo-78-family: 'Poppins';
+  --typo-78-size: 8px;
+  --typo-78-weight: 400;
+  --typo-78-line-height: 12px;
+  --typo-78-color: #000000;
+
+  --typo-79-family: 'Poppins';
+  --typo-79-size: 11px;
+  --typo-79-weight: 600;
+  --typo-79-line-height: 16.5px;
+  --typo-79-color: #ffffff;
+
+  --typo-82-family: 'Poppins';
+  --typo-82-size: 14px;
+  --typo-82-weight: 600;
+  --typo-82-line-height: 21px;
+  --typo-82-color: #ffffff;
+
+  --typo-83-family: 'Poppins';
+  --typo-83-size: 8px;
+  --typo-83-weight: 400;
+  --typo-83-line-height: 12px;
+  --typo-83-color: #d9d9d9;
+
+  --typo-84-family: 'Poppins';
+  --typo-84-size: 18px;
+  --typo-84-weight: 600;
+  --typo-84-line-height: 27px;
+  --typo-84-color: #121212;
+
+  --typo-89-family: 'Poppins';
+  --typo-89-size: 20px;
+  --typo-89-weight: 600;
+  --typo-89-line-height: 30px;
+  --typo-89-color: #121212;
+
+  --typo-90-family: 'Poppins';
+  --typo-90-size: 20px;
+  --typo-90-weight: 600;
+  --typo-90-line-height: 30px;
+  --typo-90-color: #121212;
+
+  --typo-91-family: 'Poppins';
+  --typo-91-size: 16px;
+  --typo-91-weight: 600;
+  --typo-91-line-height: 24px;
+  --typo-91-color: #121212;
+
+  --typo-92-family: 'Poppins';
+  --typo-92-size: 11px;
+  --typo-92-weight: 400;
+  --typo-92-line-height: 16.5px;
+  --typo-92-color: #797979;
+
+  --radius-md: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-ffffff);
+  color: var(--color-121212);
+  font-family: Poppins, Arial, sans-serif;
+}
+
+/* screen width is clamped in common.css */
+.screen {
+  position: relative;
+  height: 812px;
+  overflow: hidden;
+  background: var(--color-ffffff);
+}
+
+/* Generic classes (legacy generator) */
+.container { position: absolute; }
+.component { position: absolute; }
+.text { margin: 0; }
+.image, .icon, .rectangle, .ellipse, .boolean { display: block; }
+
+/* Styles mapped from JSON refs */
+.style-10 { background-color: var(--color-ffffff); border-radius: 30px; }
+.style-2 { background-color: var(--color-ffffff); }
+.style-11 { background-color: var(--color-129575); border-radius: 10px; }
+.style-54 { border-radius: 10px; }
+.style-55 { background-color: var(--color-898989); border-radius: 10px; }
+.style-43 { background-color: var(--color-ffffff); border-radius: 12px; }
+.style-29 { background-color: var(--color-d9d9d9); }
+.style-32 { background-color: var(--color-121212); border-radius: 100px; }
+
+/* Typography helpers */
+.typo-76 { font-family: var(--typo-76-family); font-size: var(--typo-76-size); font-weight: var(--typo-76-weight); line-height: var(--typo-76-line-height); color: var(--typo-76-color); text-align: center; }
+.typo-77 { font-family: var(--typo-77-family); font-size: var(--typo-77-size); font-weight: var(--typo-77-weight); line-height: var(--typo-77-line-height); color: var(--typo-77-color); text-align: center; }
+.typo-78 { font-family: var(--typo-78-family); font-size: var(--typo-78-size); font-weight: var(--typo-78-weight); line-height: var(--typo-78-line-height); color: var(--typo-78-color); }
+.typo-79 { font-family: var(--typo-79-family); font-size: var(--typo-79-size); font-weight: var(--typo-79-weight); line-height: var(--typo-79-line-height); color: var(--typo-79-color); }
+.typo-82 { font-family: var(--typo-82-family); font-size: var(--typo-82-size); font-weight: var(--typo-82-weight); line-height: var(--typo-82-line-height); color: var(--typo-82-color); }
+.typo-83 { font-family: var(--typo-83-family); font-size: var(--typo-83-size); font-weight: var(--typo-83-weight); line-height: var(--typo-83-line-height); color: var(--typo-83-color); }
+.typo-84 { font-family: var(--typo-84-family); font-size: var(--typo-84-size); font-weight: var(--typo-84-weight); line-height: var(--typo-84-line-height); color: var(--typo-84-color); }
+.typo-89 { font-family: var(--typo-89-family); font-size: var(--typo-89-size); font-weight: var(--typo-89-weight); line-height: var(--typo-89-line-height); color: var(--typo-89-color); }
+.typo-90 { font-family: var(--typo-90-family); font-size: var(--typo-90-size); font-weight: var(--typo-90-weight); line-height: var(--typo-90-line-height); color: var(--typo-90-color); }
+.typo-91 { font-family: var(--typo-91-family); font-size: var(--typo-91-size); font-weight: var(--typo-91-weight); line-height: var(--typo-91-line-height); color: var(--typo-91-color); }
+.typo-92 { font-family: var(--typo-92-family); font-size: var(--typo-92-size); font-weight: var(--typo-92-weight); line-height: var(--typo-92-line-height); color: var(--typo-92-color); }
+
+/* Root frame */
+#screen-profile-257-2468 .root {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Responsive tweaks */
+@media (max-width: 390px) {
+  #node-257-2470 { /* tabs container spacing */
+    padding-inline: 0;
+  }
+
+  #node-257-2682 { /* cards container width */
+    width: calc(100% - 60px) !important;
+    left: 30px !important;
+  }
+}
+
+/* Focus ring for tab buttons (leverages .interactive global) */
+#node-257-2470 [role="tab"].interactive:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+  border-radius: var(--radius-md);
+}
