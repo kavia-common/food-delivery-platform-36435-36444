@@ -1,0 +1,283 @@
+/*
+Sign In Screen CSS (11:235)
+- Pixel-perfect styling from Figma JSON
+- Typography variables matching design system
+- Responsive input fields with proper focus states
+- Accessible button states
+- Cross-browser compatibility
+*/
+
+:root {
+  /* Colors from design system (already in common.css, repeated for standalone use) */
+  --color-ffffff: #ffffff;
+  --color-000000: #000000;
+  --color-121212: #121212;
+  --color-129575: #129575;
+  --color-dadada: #dadada;
+  --color-d9d9d9: #d9d9d9;
+  --color-484848: #484848;
+  --color-f4f4f4: #f4f4f4;
+
+  /* Typography for Sign In screen */
+  --typo-60-family: 'Poppins';
+  --typo-60-size: 30px;
+  --typo-60-weight: 600;
+  --typo-60-line-height: 45px;
+  --typo-60-color: var(--color-000000);
+
+  --typo-61-family: 'Poppins';
+  --typo-61-size: 20px;
+  --typo-61-weight: 400;
+  --typo-61-line-height: 30px;
+  --typo-61-color: var(--color-121212);
+
+  --typo-62-family: 'Poppins';
+  --typo-62-size: 11px;
+  --typo-62-weight: 400;
+  --typo-62-line-height: 16.5px;
+  --typo-62-color: var(--color-129575);
+
+  --typo-63-family: 'Poppins';
+  --typo-63-size: 11px;
+  --typo-63-weight: 400;
+  --typo-63-line-height: 16.5px;
+  --typo-63-color: var(--color-000000);
+
+  --typo-64-family: 'Poppins';
+  --typo-64-size: 11px;
+  --typo-64-weight: 400;
+  --typo-64-line-height: 16.5px;
+  --typo-64-color: var(--color-d9d9d9);
+
+  --typo-65-family: 'Poppins';
+  --typo-65-size: 11px;
+  --typo-65-weight: 400;
+  --typo-65-line-height: 16.5px;
+  --typo-65-color: var(--color-d9d9d9);
+
+  --typo-66-family: 'Poppins';
+  --typo-66-size: 14px;
+  --typo-66-weight: 600;
+  --typo-66-line-height: 21px;
+  --typo-66-color: var(--color-121212);
+
+  --typo-58-family: 'Poppins';
+  --typo-58-size: 16px;
+  --typo-58-weight: 600;
+  --typo-58-line-height: 24px;
+  --typo-58-color: var(--color-ffffff);
+
+  --typo-67-family: 'SF Pro Display';
+  --typo-67-size: 15px;
+  --typo-67-weight: 500;
+  --typo-67-line-height: 17.9px;
+  --typo-67-color: var(--color-484848);
+
+  /* Spacing */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 15px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-ffffff);
+  color: var(--color-121212);
+  font-family: 'Poppins', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Screen container */
+.screen {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  overflow: hidden;
+  background: var(--color-ffffff);
+  margin: 0 auto;
+}
+
+/* Generic positioning classes */
+.container { position: absolute; }
+.component { position: absolute; }
+.text { margin: 0; display: block; }
+.image, .icon, .rectangle, .ellipse, .line { display: block; }
+
+/* Style references */
+.style-10 { background-color: var(--color-ffffff); border-radius: 30px; }
+.style-2 { background-color: var(--color-ffffff); }
+.style-3 { background-color: var(--color-000000); }
+.style-11 { background-color: var(--color-129575); border-radius: 10px; }
+.style-18 { background-color: var(--color-121212); }
+.style-19 { background-color: var(--color-129575); }
+.style-28 { border: 0; border-top: 1px solid var(--color-d9d9d9); margin: 0; }
+.style-29 { background-color: var(--color-d9d9d9); }
+.style-30 { background-color: var(--color-f4f4f4); border-radius: 10px; }
+.style-32 { background-color: var(--color-121212); border-radius: 100px; }
+.style-126 { background-color: var(--color-ffffff); border: 1px solid var(--color-dadada); border-radius: 10px; }
+.style-16 { background-color: var(--color-000000); border-radius: 1.2px; }
+.style-46 { background-color: transparent; }
+.style-61 { background-color: var(--color-484848); opacity: 0.4; border-radius: 2px; }
+
+/* Typography classes */
+.typo-60 { font-family: var(--typo-60-family); font-size: var(--typo-60-size); font-weight: var(--typo-60-weight); line-height: var(--typo-60-line-height); color: var(--typo-60-color); }
+.typo-61 { font-family: var(--typo-61-family); font-size: var(--typo-61-size); font-weight: var(--typo-61-weight); line-height: var(--typo-61-line-height); color: var(--typo-61-color); }
+.typo-62 { font-family: var(--typo-62-family); font-size: var(--typo-62-size); font-weight: var(--typo-62-weight); line-height: var(--typo-62-line-height); color: var(--typo-62-color); text-decoration: none; }
+.typo-63 { font-family: var(--typo-63-family); font-size: var(--typo-63-size); font-weight: var(--typo-63-weight); line-height: var(--typo-63-line-height); color: var(--typo-63-color); }
+.typo-64 { font-family: var(--typo-64-family); font-size: var(--typo-64-size); font-weight: var(--typo-64-weight); line-height: var(--typo-64-line-height); color: var(--typo-64-color); }
+.typo-65 { font-family: var(--typo-65-family); font-size: var(--typo-65-size); font-weight: var(--typo-65-weight); line-height: var(--typo-65-line-height); color: var(--typo-65-color); }
+.typo-66 { font-family: var(--typo-66-family); font-size: var(--typo-66-size); font-weight: var(--typo-66-weight); line-height: var(--typo-66-line-height); color: var(--typo-66-color); }
+.typo-58 { font-family: var(--typo-58-family); font-size: var(--typo-58-size); font-weight: var(--typo-58-weight); line-height: var(--typo-58-line-height); color: var(--typo-58-color); }
+.typo-67 { font-family: var(--typo-67-family); font-size: var(--typo-67-size); font-weight: var(--typo-67-weight); line-height: var(--typo-67-line-height); color: var(--typo-67-color); }
+
+/* Root frame */
+#screen-sign-in-11-235 .root {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Input fields */
+.input-field {
+  position: relative;
+}
+
+.input-element {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.input-element::placeholder {
+  color: var(--color-d9d9d9);
+  opacity: 1;
+}
+
+.input-element:focus {
+  outline: none;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-element:focus + .rectangle,
+.input-wrapper:focus-within .rectangle {
+  outline: 2px solid var(--color-129575);
+  outline-offset: -2px;
+}
+
+/* Buttons */
+.button-primary {
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  position: relative;
+}
+
+.button-primary:hover {
+  background-color: #0f7a5f;
+  transform: translateY(-1px);
+}
+
+.button-primary:active {
+  transform: translateY(0);
+}
+
+.button-primary:focus-visible {
+  outline: 3px solid rgba(18, 149, 117, 0.4);
+  outline-offset: 2px;
+}
+
+.button-social {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+  position: absolute;
+  transition: transform 0.2s ease;
+}
+
+.button-social:hover {
+  transform: scale(1.05);
+}
+
+.button-social:active {
+  transform: scale(0.98);
+}
+
+.button-social:focus-visible {
+  outline: 2px solid var(--color-129575);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Links */
+a.typo-62 {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+a.typo-62:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+a.typo-62:focus-visible {
+  outline: 2px solid var(--color-129575);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.sign-up-link {
+  color: var(--color-129575);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sign-up-link:hover {
+  text-decoration: underline;
+}
+
+.sign-up-link:focus-visible {
+  outline: 2px solid var(--color-129575);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Accessibility improvements */
+.line {
+  pointer-events: none;
+}
+
+/* Image rendering */
+img.icon {
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 390px) {
+  .screen {
+    width: 100%;
+    max-width: 390px;
+  }
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign In - 11:235</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./common.css" rel="stylesheet">
+  <link href="./sign-in-11-235.css" rel="stylesheet">
+</head>
+<body>
+  <!--
+    Sign In screen implementation from Figma design 11:235
+    - Pixel-perfect layout with exact dimensions from JSON
+    - Semantic HTML with proper labels and ARIA attributes
+    - Accessible form inputs with proper type and labeling
+    - Social sign-in buttons (Google, Facebook)
+    - Responsive within mobile viewport (375x812)
+  -->
+
+  <div id="screen-sign-in-11-235" class="screen" role="main">
+    <!-- Root Frame: Sign In -->
+    <main id="node-11-235" class="container root style-10" style="left: 0; top: 0; width: 375px; height: 812px;">
+      
+      <!-- Status Bar at (0,0) -->
+      <div id="node-13-71" class="component" style="position:absolute; left:0; top:0; width:375px; height:44px;" aria-hidden="true">
+        <!-- Symbols (battery, signal, wifi) -->
+        <div id="node-13-71-symbols" class="container" style="position:absolute; left:293.5px; top:16.6px; width:68px; height:13px;">
+          <!-- Battery -->
+          <img id="node-13-71-128-306" alt="" src="figmaimages/figma_image_13_71_128_306.svg" class="icon style-3" style="position:absolute; left:43.5px; top:1.44px; width:20px; height:9.5px;" loading="eager"/>
+          <img id="node-13-71-128-307" alt="" src="figmaimages/figma_image_13_71_128_307.svg" class="icon style-3" style="position:absolute; left:42.5px; top:0.44px; width:22px; height:11.5px;" loading="eager"/>
+          <img id="node-13-71-128-309" alt="" src="figmaimages/figma_image_13_71_128_309.svg" class="icon style-61" style="position:absolute; left:44.5px; top:3.48px; width:18px; height:7.667px;" loading="eager"/>
+          <!-- Signal bars -->
+          <img id="node-13-71-128-311" alt="" src="figmaimages/figma_image_13_71_128_311.svg" class="icon style-16" style="position:absolute; left:5px; top:7.7px; width:3px; height:4px;" loading="eager"/>
+          <img id="node-13-71-128-312" alt="" src="figmaimages/figma_image_13_71_128_312.svg" class="icon style-16" style="position:absolute; left:9.8px; top:5.7px; width:3px; height:6px;" loading="eager"/>
+          <img id="node-13-71-128-313" alt="" src="figmaimages/figma_image_13_71_128_313.svg" class="icon style-16" style="position:absolute; left:14.4px; top:3.4px; width:3px; height:8.3px;" loading="eager"/>
+          <img id="node-13-71-128-314" alt="" src="figmaimages/figma_image_13_71_128_314.svg" class="icon style-16" style="position:absolute; left:19.1px; top:1px; width:3px; height:10.7px;" loading="eager"/>
+        </div>
+        <!-- Time -->
+        <p id="node-13-71-time" class="text style-46 typo-67" style="position:absolute; left:29.5px; top:14px; width:37px; height:18px;">19:27</p>
+      </div>
+
+      <!-- Title Group at (30, 94) relative to screen -->
+      <header id="node-13-110" class="container" style="position:absolute; left:30px; top:94px; width:155px; height:75px;">
+        <h1 id="node-12-29" class="text style-3 typo-60" style="position:absolute; left:0; top:0; width:84px; height:45px; margin:0;">Hello,</h1>
+        <p id="node-12-30" class="text style-18 typo-61" style="position:absolute; left:0; top:45px; width:155px; height:30px; margin:0;">Welcome Back!</p>
+      </header>
+
+      <!-- Email Input Field at (30, 226) -->
+      <div id="node-30-585" class="component input-field" style="position:absolute; left:30px; top:226px; width:315px; height:81px;">
+        <label for="email-input" id="node-30-585-label" class="text style-18 typo-66" style="position:absolute; left:0; top:0; width:38px; height:21px;">Email</label>
+        <div class="input-wrapper" style="position:absolute; left:0; top:26px; width:315px; height:55px;">
+          <div id="node-30-585-rect" class="rectangle style-30" style="position:absolute; left:0; top:0; width:315px; height:55px;"></div>
+          <input 
+            type="email" 
+            id="email-input" 
+            name="email"
+            placeholder="Enter Email"
+            aria-label="Email address"
+            class="text style-29 typo-65 input-element"
+            style="position:absolute; left:20px; top:19px; width:275px; height:17px;"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Password Input Field at (30, 337) -->
+      <div id="node-30-590" class="component input-field" style="position:absolute; left:30px; top:337px; width:315px; height:81px;">
+        <label for="password-input" id="node-30-590-label" class="text style-18 typo-66" style="position:absolute; left:0; top:0; width:107px; height:21px;">Enter Password</label>
+        <div class="input-wrapper" style="position:absolute; left:0; top:26px; width:315px; height:55px;">
+          <div id="node-30-590-rect" class="rectangle style-30" style="position:absolute; left:0; top:0; width:315px; height:55px;"></div>
+          <input 
+            type="password" 
+            id="password-input" 
+            name="password"
+            placeholder="Enter Password"
+            aria-label="Password"
+            class="text style-29 typo-65 input-element"
+            style="position:absolute; left:20px; top:19px; width:275px; height:17px;"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Forgot Password at (40, 438) -->
+      <div id="node-12-91" class="container" style="position:absolute; left:40px; top:438px; width:97px; height:17px;">
+        <a href="#forgot-password" id="node-12-94" class="text style-19 typo-62" style="position:absolute; left:0; top:0; width:97px; height:17px;">Forgot Password?</a>
+      </div>
+
+      <!-- Sign In Button at (30, 480) -->
+      <button id="node-54-668" class="button-primary style-11" style="position:absolute; left:30px; top:480px; width:315px; height:60px;" aria-label="Sign in to your account">
+        <span id="node-54-668-label" class="text style-2 typo-58" style="position:absolute; left:85px; top:18px; width:114px; height:24px;">Sign In</span>
+        <img id="node-54-668-arrow" alt="" src="figmaimages/figma_image_54_668_53_625.svg" class="icon" style="position:absolute; left:210px; top:20px; width:20px; height:20px;" loading="eager"/>
+      </button>
+
+      <!-- Divider Line at (90, 560) -->
+      <div id="node-12-139" class="container" style="position:absolute; left:90px; top:560px; width:195px; height:17px;">
+        <hr id="node-12-140" class="line style-28" style="position:absolute; left:0; top:9px; width:50px; height:0;" aria-hidden="true"/>
+        <p id="node-12-142" class="text style-29 typo-64" style="position:absolute; left:57px; top:0; width:81px; height:17px; margin:0;">Or Sign in With</p>
+        <hr id="node-12-141" class="line style-28" style="position:absolute; left:145px; top:9px; width:50px; height:0;" aria-hidden="true"/>
+      </div>
+
+      <!-- Social Sign In Buttons at (131, 597) and (200, 597) -->
+      <div class="social-buttons" style="position:absolute; left:131px; top:597px; width:113px; height:44px;">
+        <!-- Google Button -->
+        <button id="node-13-35" class="button-social" aria-label="Sign in with Google" style="position:absolute; left:0; top:0; width:44px; height:44px;">
+          <div id="node-13-36" class="rectangle style-126" style="position:absolute; left:0; top:0; width:44px; height:44px;"></div>
+          <img id="node-13-48" alt="Google" src="figmaimages/figma_image_13_48.svg" class="icon" style="position:absolute; left:10px; top:10px; width:24px; height:24px;" loading="lazy"/>
+        </button>
+
+        <!-- Facebook Button -->
+        <button id="node-13-49" class="button-social" aria-label="Sign in with Facebook" style="position:absolute; left:69px; top:0; width:44px; height:44px;">
+          <div id="node-13-50" class="rectangle style-126" style="position:absolute; left:0; top:0; width:44px; height:44px;"></div>
+          <img id="node-13-58" alt="Facebook" src="figmaimages/figma_image_13_61.svg" class="icon" style="position:absolute; left:10px; top:10px; width:24px; height:24px;" loading="lazy"/>
+        </button>
+      </div>
+
+      <!-- Sign Up Link at (99, 696) -->
+      <p id="node-13-67" class="text style-3 typo-63" style="position:absolute; left:99px; top:696px; width:177px; height:17px; margin:0;">
+        Don't have an account? <a href="#sign-up" class="sign-up-link">Sign up</a>
+      </p>
+
+      <!-- Home Indicator at (0, 778) -->
+      <div id="node-42-614" class="component style-2" style="position:absolute; left:0; top:778px; width:375px; height:34px;" aria-hidden="true">
+        <div id="node-42-614-line" class="rectangle style-32" style="position:absolute; left:120px; top:21px; width:135px; height:5px;"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./sign-in-11-235.js"></script>
+</body>
+</html>
